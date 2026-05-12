@@ -1,14 +1,7 @@
 export type TransactionType = "receita" | "despesa";
 
 export type Category =
-  | "Alimentação"
-  | "Transporte"
-  | "Moradia"
-  | "Lazer"
-  | "Saúde"
-  | "Educação"
   | "Salário"
-  | "Freelance"
   | "Pgto Lote em Gostoso"
   | "Pgto Advogada"
   | "Pgto Taxas Fiscais"
@@ -16,14 +9,7 @@ export type Category =
   | "Outros";
 
 export const CATEGORIES: Category[] = [
-  "Alimentação",
-  "Transporte",
-  "Moradia",
-  "Lazer",
-  "Saúde",
-  "Educação",
   "Salário",
-  "Freelance",
   "Pgto Lote em Gostoso",
   "Pgto Advogada",
   "Pgto Taxas Fiscais",
@@ -31,14 +17,8 @@ export const CATEGORIES: Category[] = [
   "Outros",
 ];
 
-export const INCOME_CATEGORIES: Category[] = ["Salário", "Freelance", "Outros"];
+export const INCOME_CATEGORIES: Category[] = ["Salário", "Outros"];
 export const EXPENSE_CATEGORIES: Category[] = [
-  "Alimentação",
-  "Transporte",
-  "Moradia",
-  "Lazer",
-  "Saúde",
-  "Educação",
   "Pgto Lote em Gostoso",
   "Pgto Advogada",
   "Pgto Taxas Fiscais",
