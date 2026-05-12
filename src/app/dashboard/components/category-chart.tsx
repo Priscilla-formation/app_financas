@@ -18,9 +18,8 @@ interface CategoryChartProps {
 }
 
 export function CategoryChart({ transactions }: CategoryChartProps) {
-  const despesas = transactions.filter((t) => t.type === "despesa");
-
-  const grouped = despesas.reduce<Record<string, number>>((acc, t) => {
+  // Agrupa TODAS as transações por categoria (receitas + despesas)
+  const grouped = transactions.reduce<Record<string, number>>((acc, t) => {
     acc[t.category] = (acc[t.category] || 0) + Number(t.amount);
     return acc;
   }, {});
@@ -33,11 +32,13 @@ export function CategoryChart({ transactions }: CategoryChartProps) {
     return (
       <Card className="border-slate-200 dark:border-slate-700 dark:bg-slate-800 shadow-sm">
         <CardHeader className="pb-2">
-          <CardTitle className="text-base font-semibold text-slate-700 dark:text-slate-200">Despesas por Categoria</CardTitle>
+          <CardTitle className="text-base font-semibold text-slate-700 dark:text-slate-200">
+            Transações por Categoria
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-48 flex items-center justify-center text-slate-400 dark:text-slate-500 text-sm">
-            Nenhuma despesa no período
+            Nenhuma transação no período
           </div>
         </CardContent>
       </Card>
@@ -45,12 +46,14 @@ export function CategoryChart({ transactions }: CategoryChartProps) {
   }
 
   return (
-    <Card className="border-slate-200 shadow-sm">
+    <Card className="border-slate-200 dark:border-slate-700 dark:bg-slate-800 shadow-sm">
       <CardHeader className="pb-2">
-        <CardTitle className="text-base font-600 text-slate-700">Despesas por Categoria</CardTitle>
+        <CardTitle className="text-base font-semibold text-slate-700 dark:text-slate-200">
+          Transações por Categoria
+        </CardTitle>
       </CardHeader>
       <CardContent>
-        <ResponsiveContainer width="100%" height={260}>
+        <ResponsiveContainer width="100%" height={280}>
           <PieChart>
             <Pie
               data={data}
