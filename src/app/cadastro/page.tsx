@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Loader2, Mail, Lock, CheckCircle2 } from "lucide-react";
+import { Loader2, Mail, Lock, CheckCircle2, AlertCircle, Inbox } from "lucide-react";
 
 export default function CadastroPage() {
   const [email, setEmail] = useState("");
@@ -82,20 +82,51 @@ export default function CadastroPage() {
 
           <CardContent className="px-8 pb-8 pt-6">
             {success ? (
-              <div className="text-center py-4">
-                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 className="w-8 h-8 text-emerald-600" />
+              <div className="py-2 space-y-4">
+                {/* Ícone de sucesso */}
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <CheckCircle2 className="w-8 h-8 text-emerald-600" />
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Enviamos um email de confirmação para{" "}
+                    <strong className="text-slate-900">{email}</strong>.
+                    <br />
+                    Clique no link para ativar sua conta.
+                  </p>
                 </div>
-                <p className="text-slate-700 text-sm leading-relaxed">
-                  Enviamos um link de confirmação para{" "}
-                  <strong className="text-slate-900">{email}</strong>.
-                  <br />
-                  Clique no link para ativar sua conta.
-                </p>
+
+                {/* Passo a passo */}
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
+                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Próximos passos</p>
+                  {[
+                    { icon: <Inbox className="w-4 h-4 text-blue-500" />, text: "Abra sua caixa de entrada" },
+                    { icon: <Mail className="w-4 h-4 text-emerald-500" />, text: 'Procure o email de "App Finanças"' },
+                    { icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" />, text: "Clique em Confirmar meu cadastro" },
+                  ].map((step, i) => (
+                    <div key={i} className="flex items-center gap-3 text-sm text-slate-700">
+                      <span className="w-5 h-5 rounded-full bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-400 shrink-0">
+                        {i + 1}
+                      </span>
+                      {step.icon}
+                      {step.text}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Aviso de spam */}
+                <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">
+                  <AlertCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                  <p className="text-xs text-amber-700 leading-relaxed">
+                    <strong>Não encontrou o email?</strong> Verifique também a pasta de{" "}
+                    <strong>Spam</strong> ou <strong>Lixo Eletrônico</strong> — às vezes o email de confirmação cai por lá.
+                  </p>
+                </div>
+
                 <Link href="/login">
                   <Button
                     variant="outline"
-                    className="mt-6 w-full rounded-xl border-slate-200 text-slate-700 font-600"
+                    className="w-full rounded-xl border-slate-200 text-slate-700 font-semibold mt-1"
                   >
                     Ir para o login
                   </Button>
