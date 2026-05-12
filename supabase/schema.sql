@@ -8,7 +8,9 @@ CREATE TABLE IF NOT EXISTS transactions (
   type TEXT NOT NULL CHECK (type IN ('receita', 'despesa')),
   category TEXT NOT NULL CHECK (category IN (
     'Alimentação', 'Transporte', 'Moradia', 'Lazer',
-    'Saúde', 'Educação', 'Salário', 'Freelance', 'Outros'
+    'Saúde', 'Educação', 'Salário', 'Freelance',
+    'Pgto Lote em Gostoso', 'Pgto Advogada', 'Pgto Taxas Fiscais', 'Pgto Taxas',
+    'Outros'
   )),
   created_at TIMESTAMPTZ DEFAULT NOW() NOT NULL
 );

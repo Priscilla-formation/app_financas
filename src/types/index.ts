@@ -9,6 +9,10 @@ export type Category =
   | "Educação"
   | "Salário"
   | "Freelance"
+  | "Pgto Lote em Gostoso"
+  | "Pgto Advogada"
+  | "Pgto Taxas Fiscais"
+  | "Pgto Taxas"
   | "Outros";
 
 export const CATEGORIES: Category[] = [
@@ -20,6 +24,10 @@ export const CATEGORIES: Category[] = [
   "Educação",
   "Salário",
   "Freelance",
+  "Pgto Lote em Gostoso",
+  "Pgto Advogada",
+  "Pgto Taxas Fiscais",
+  "Pgto Taxas",
   "Outros",
 ];
 
@@ -31,6 +39,10 @@ export const EXPENSE_CATEGORIES: Category[] = [
   "Lazer",
   "Saúde",
   "Educação",
+  "Pgto Lote em Gostoso",
+  "Pgto Advogada",
+  "Pgto Taxas Fiscais",
+  "Pgto Taxas",
   "Outros",
 ];
 
