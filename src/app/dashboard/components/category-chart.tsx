@@ -31,12 +31,12 @@ export function CategoryChart({ transactions }: CategoryChartProps) {
 
   if (data.length === 0) {
     return (
-      <Card className="border-slate-200 shadow-sm">
+      <Card className="border-slate-200 dark:border-slate-700 dark:bg-slate-800 shadow-sm">
         <CardHeader className="pb-2">
-          <CardTitle className="text-base font-600 text-slate-700">Despesas por Categoria</CardTitle>
+          <CardTitle className="text-base font-semibold text-slate-700 dark:text-slate-200">Despesas por Categoria</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-48 flex items-center justify-center text-slate-400 text-sm">
+          <div className="h-48 flex items-center justify-center text-slate-400 dark:text-slate-500 text-sm">
             Nenhuma despesa no período
           </div>
         </CardContent>

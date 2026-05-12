@@ -69,11 +69,11 @@ export function TransactionList({ transactions }: TransactionListProps) {
 
   return (
     <>
-      <div className="divide-y divide-slate-100">
+      <div className="divide-y divide-slate-100 dark:divide-slate-700">
         {transactions.map((t) => (
           <div
             key={t.id}
-            className="flex items-center gap-4 py-3.5 px-1 hover:bg-slate-50 rounded-xl transition-colors group"
+            className="flex items-center gap-4 py-3.5 px-1 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-xl transition-colors group"
           >
             {/* Icon */}
             <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
@@ -87,9 +87,9 @@ export function TransactionList({ transactions }: TransactionListProps) {
 
             {/* Info */}
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-600 text-slate-800 truncate">{t.description}</p>
+              <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 truncate">{t.description}</p>
               <div className="flex items-center gap-2 mt-0.5">
-                <span className="text-xs text-slate-400">
+                <span className="text-xs text-slate-400 dark:text-slate-500">
                   {format(parseISO(t.date), "dd MMM yyyy", { locale: ptBR })}
                 </span>
                 <span className={`text-xs px-2 py-0.5 rounded-full font-500 ${CATEGORY_COLORS[t.category] ?? "bg-gray-100 text-gray-700"}`}>

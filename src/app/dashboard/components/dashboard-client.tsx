@@ -44,8 +44,8 @@ export function DashboardClient({ transactions, userEmail }: DashboardClientProp
       {/* Header row */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">Dashboard</h1>
-          <p className="text-sm text-slate-500 mt-0.5">
+          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">Dashboard</h1>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
             {MONTH_NAMES[month]} {year} · {userEmail}
           </p>
         </div>
@@ -70,11 +70,11 @@ export function DashboardClient({ transactions, userEmail }: DashboardClientProp
 
         {/* Transaction list */}
         <div className="lg:col-span-2">
-          <Card className="border-slate-200 shadow-sm">
+          <Card className="border-slate-200 dark:border-slate-700 dark:bg-slate-800 shadow-sm">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-base font-600 text-slate-700">Transações</CardTitle>
-                <span className="text-xs text-slate-400 bg-slate-100 rounded-full px-2.5 py-1">
+                <CardTitle className="text-base font-semibold text-slate-700 dark:text-slate-200">Transações</CardTitle>
+                <span className="text-xs text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-700 rounded-full px-2.5 py-1">
                   {filtered.length} {filtered.length === 1 ? "item" : "itens"}
                 </span>
               </div>

@@ -56,10 +56,10 @@ export function SummaryCards({ transactions }: SummaryCardsProps) {
       {cards.map((card) => {
         const Icon = card.icon;
         return (
-          <Card key={card.label} className={`border ${card.border} shadow-sm`}>
+          <Card key={card.label} className={`border ${card.border} dark:border-slate-700 dark:bg-slate-800 shadow-sm`}>
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-medium text-slate-500">{card.label}</span>
+                <span className="text-sm font-medium text-slate-500 dark:text-slate-400">{card.label}</span>
                 <div className={`w-9 h-9 rounded-xl ${card.bg} flex items-center justify-center`}>
                   <Icon className={`w-4.5 h-4.5 ${card.color}`} size={18} />
                 </div>
@@ -67,7 +67,7 @@ export function SummaryCards({ transactions }: SummaryCardsProps) {
               <p className={`text-2xl font-extrabold ${card.valueColor} tracking-tight`}>
                 {formatCurrency(card.value)}
               </p>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
                 {transactions.filter((t) => t.type === (card.label === "Receitas" ? "receita" : card.label === "Despesas" ? "despesa" : t.type)).length}{" "}
                 {card.label === "Saldo" ? `transaç${transactions.length === 1 ? "ão" : "ões"} no período` : `transaç${transactions.filter((t) => t.type === (card.label === "Receitas" ? "receita" : "despesa")).length === 1 ? "ão" : "ões"}`}
               </p>
