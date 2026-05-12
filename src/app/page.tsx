@@ -14,9 +14,8 @@ import { LandingNav } from "@/components/landing-nav";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300" style={{ fontFamily: "'Plus Jakarta Sans', 'DM Sans', sans-serif" }}>
+    <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         .gradient-hero {
           background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #064e3b 100%);
         }

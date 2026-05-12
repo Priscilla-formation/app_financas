@@ -42,12 +42,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center px-4 bg-slate-50"
-      style={{ fontFamily: "'Plus Jakarta Sans', 'DM Sans', sans-serif" }}
-    >
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');`}</style>
-
+    <div className="min-h-screen flex items-center justify-center px-4 bg-slate-50 dark:bg-slate-950">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
