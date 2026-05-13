@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS transactions (
   date DATE NOT NULL,
   type TEXT NOT NULL CHECK (type IN ('receita', 'despesa')),
   category TEXT NOT NULL CHECK (category IN (
-    'Salário',
+    'Salário', 'Transferência de Priscilla', 'Transferência de Andrea',
     'Pgto Lote em Gostoso', 'Pgto Advogada', 'Pgto Taxas Fiscais', 'Pgto Taxas',
     'Outros'
   )),

@@ -1,5 +1,8 @@
+"use client";
+
 import { TrendingUp, TrendingDown, Wallet } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/components/language-provider";
 import type { Transaction } from "@/types";
 
 function formatCurrency(value: number) {
@@ -11,6 +14,8 @@ interface SummaryCardsProps {
 }
 
 export function SummaryCards({ transactions }: SummaryCardsProps) {
+  const { t } = useLanguage();
+  const d = t.dashboard;
   const receitas = transactions
     .filter((t) => t.type === "receita")
     .reduce((sum, t) => sum + Number(t.amount), 0);
@@ -23,7 +28,7 @@ export function SummaryCards({ transactions }: SummaryCardsProps) {
 
   const cards = [
     {
-      label: "Receitas",
+      label: d.income,
       value: receitas,
       icon: TrendingUp,
       color: "text-emerald-600",
@@ -32,7 +37,7 @@ export function SummaryCards({ transactions }: SummaryCardsProps) {
       valueColor: "text-emerald-600",
     },
     {
-      label: "Despesas",
+      label: d.expenses,
       value: despesas,
       icon: TrendingDown,
       color: "text-red-500",
@@ -41,7 +46,7 @@ export function SummaryCards({ transactions }: SummaryCardsProps) {
       valueColor: "text-red-500",
     },
     {
-      label: "Saldo",
+      label: d.balance,
       value: saldo,
       icon: Wallet,
       color: saldo >= 0 ? "text-blue-600" : "text-red-500",
@@ -68,8 +73,10 @@ export function SummaryCards({ transactions }: SummaryCardsProps) {
                 {formatCurrency(card.value)}
               </p>
               <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
-                {transactions.filter((t) => t.type === (card.label === "Receitas" ? "receita" : card.label === "Despesas" ? "despesa" : t.type)).length}{" "}
-                {card.label === "Saldo" ? `transaç${transactions.length === 1 ? "ão" : "ões"} no período` : `transaç${transactions.filter((t) => t.type === (card.label === "Receitas" ? "receita" : "despesa")).length === 1 ? "ão" : "ões"}`}
+                {card.label === d.balance
+                  ? `${transactions.length} ${d.transactionsInPeriod}`
+                  : `${transactions.filter((tx) => tx.type === (card.label === d.income ? "receita" : "despesa")).length} ${d.transactions}`
+                }
               </p>
             </CardContent>
           </Card>

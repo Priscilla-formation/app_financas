@@ -2,6 +2,8 @@ export type TransactionType = "receita" | "despesa";
 
 export type Category =
   | "Salário"
+  | "Transferência de Priscilla"
+  | "Transferência de Andrea"
   | "Pgto Lote em Gostoso"
   | "Pgto Advogada"
   | "Pgto Taxas Fiscais"
@@ -10,6 +12,8 @@ export type Category =
 
 export const CATEGORIES: Category[] = [
   "Salário",
+  "Transferência de Priscilla",
+  "Transferência de Andrea",
   "Pgto Lote em Gostoso",
   "Pgto Advogada",
   "Pgto Taxas Fiscais",
@@ -17,7 +21,13 @@ export const CATEGORIES: Category[] = [
   "Outros",
 ];
 
-export const INCOME_CATEGORIES: Category[] = ["Salário", "Outros"];
+export const INCOME_CATEGORIES: Category[] = [
+  "Salário",
+  "Transferência de Priscilla",
+  "Transferência de Andrea",
+  "Outros",
+];
+
 export const EXPENSE_CATEGORIES: Category[] = [
   "Pgto Lote em Gostoso",
   "Pgto Advogada",

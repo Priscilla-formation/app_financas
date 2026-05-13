@@ -2,6 +2,7 @@
 
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLanguage } from "@/components/language-provider";
 import type { Transaction } from "@/types";
 
 const COLORS = [
@@ -18,6 +19,7 @@ interface CategoryChartProps {
 }
 
 export function CategoryChart({ transactions }: CategoryChartProps) {
+  const { t } = useLanguage();
   // Agrupa TODAS as transações por categoria (receitas + despesas)
   const grouped = transactions.reduce<Record<string, number>>((acc, t) => {
     acc[t.category] = (acc[t.category] || 0) + Number(t.amount);
@@ -33,12 +35,12 @@ export function CategoryChart({ transactions }: CategoryChartProps) {
       <Card className="border-slate-200 dark:border-slate-700 dark:bg-slate-800 shadow-sm">
         <CardHeader className="pb-2">
           <CardTitle className="text-base font-semibold text-slate-700 dark:text-slate-200">
-            Transações por Categoria
+            {t.dashboard.chartTitle}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-48 flex items-center justify-center text-slate-400 dark:text-slate-500 text-sm">
-            Nenhuma transação no período
+            {t.dashboard.chartEmpty}
           </div>
         </CardContent>
       </Card>
@@ -49,7 +51,7 @@ export function CategoryChart({ transactions }: CategoryChartProps) {
     <Card className="border-slate-200 dark:border-slate-700 dark:bg-slate-800 shadow-sm">
       <CardHeader className="pb-2">
         <CardTitle className="text-base font-semibold text-slate-700 dark:text-slate-200">
-          Transações por Categoria
+          {t.dashboard.chartTitle}
         </CardTitle>
       </CardHeader>
       <CardContent>
