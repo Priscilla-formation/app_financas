@@ -12,45 +12,6 @@ export const translations = {
       lightMode: "Ativar modo claro",
       darkMode: "Ativar modo escuro",
     },
-    // Landing
-    landing: {
-      badge: "Controle financeiro simples e visual",
-      headline1: "Suas finanças,",
-      headline2: "sob controle.",
-      subheadline:
-        "Registre receitas e despesas, visualize seu saldo em tempo real e tome decisões financeiras mais inteligentes — tudo em um lugar só.",
-      ctaStart: "Começar grátis",
-      ctaHow: "Ver como funciona",
-      statsCategories: "Categorias",
-      statsCharts: "Gráficos",
-      statsExport: "Export CSV",
-      featuresTitle: "Tudo que você precisa",
-      featuresSubtitle:
-        "Uma plataforma completa para você ter o controle total das suas finanças pessoais.",
-      feature1Title: "Dashboard Visual",
-      feature1Desc:
-        "Veja um resumo completo do seu mês: total de receitas, despesas e saldo disponível com gráfico por categoria.",
-      feature1a: "Cards de resumo mensal",
-      feature1b: "Gráfico por categoria",
-      feature1c: "Visão instantânea",
-      feature2Title: "CRUD de Transações",
-      feature2Desc:
-        "Registre, edite e exclua receitas e despesas com campos completos: descrição, valor, data, tipo e categoria.",
-      feature2a: "Criar e editar",
-      feature2b: "Filtro por mês",
-      feature2c: "Busca por descrição",
-      feature3Title: "Exportar CSV",
-      feature3Desc:
-        "Exporte suas transações filtradas em formato .csv para usar em planilhas Excel, Google Sheets e outros sistemas.",
-      feature3a: "Export com filtros",
-      feature3b: "Formato .csv padrão",
-      feature3c: "Compatível com Excel",
-      ctaBannerTitle: "Comece hoje mesmo",
-      ctaBannerSub: "Cadastre-se grátis e tenha o controle financeiro que você sempre quis.",
-      ctaBannerBtn: "Criar conta grátis",
-      footerRights: "© 2025 App Finanças de Amores. Todos os direitos reservados.",
-      footerSafe: "Seus dados são seguros",
-    },
     // Auth
     login: {
       title: "Bem-vindo de volta",
@@ -160,44 +121,6 @@ export const translations = {
       connectedAs: "Connecté en tant que",
       lightMode: "Activer le mode clair",
       darkMode: "Activer le mode sombre",
-    },
-    landing: {
-      badge: "Gestion financière simple et visuelle",
-      headline1: "Vos finances,",
-      headline2: "sous contrôle.",
-      subheadline:
-        "Enregistrez revenus et dépenses, visualisez votre solde en temps réel et prenez de meilleures décisions financières — tout en un seul endroit.",
-      ctaStart: "Commencer gratuitement",
-      ctaHow: "Voir comment ça marche",
-      statsCategories: "Catégories",
-      statsCharts: "Graphiques",
-      statsExport: "Export CSV",
-      featuresTitle: "Tout ce dont vous avez besoin",
-      featuresSubtitle:
-        "Une plateforme complète pour avoir le contrôle total de vos finances personnelles.",
-      feature1Title: "Tableau de bord visuel",
-      feature1Desc:
-        "Consultez un résumé complet de votre mois : total des revenus, dépenses et solde disponible avec graphique par catégorie.",
-      feature1a: "Cartes de résumé mensuel",
-      feature1b: "Graphique par catégorie",
-      feature1c: "Vue instantanée",
-      feature2Title: "Gestion des transactions",
-      feature2Desc:
-        "Créez, modifiez et supprimez revenus et dépenses avec tous les champs : description, montant, date, type et catégorie.",
-      feature2a: "Créer et modifier",
-      feature2b: "Filtre par mois",
-      feature2c: "Recherche par description",
-      feature3Title: "Exporter en CSV",
-      feature3Desc:
-        "Exportez vos transactions filtrées au format .csv pour les utiliser dans Excel, Google Sheets et autres outils.",
-      feature3a: "Export avec filtres",
-      feature3b: "Format .csv standard",
-      feature3c: "Compatible Excel",
-      ctaBannerTitle: "Commencez dès aujourd'hui",
-      ctaBannerSub: "Inscrivez-vous gratuitement et prenez le contrôle de vos finances.",
-      ctaBannerBtn: "Créer un compte gratuit",
-      footerRights: "© 2025 App Finances d'Amores. Tous droits réservés.",
-      footerSafe: "Vos données sont sécurisées",
     },
     login: {
       title: "Bon retour !",

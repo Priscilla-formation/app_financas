@@ -22,7 +22,7 @@ export function DashboardNav({ userEmail }: DashboardNavProps) {
 
   async function handleSignOut() {
     await signOut();
-    router.push("/");
+    router.push("/login");
     router.refresh();
   }
 
